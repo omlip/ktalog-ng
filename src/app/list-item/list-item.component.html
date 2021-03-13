@@ -1,0 +1,51 @@
+
+
+<button class="btn btn-icon-link" (click)="showWizard()">
+  New Item
+</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Comment</th>
+    <!--<th>Place</th>
+    <th>Extra Info</th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{item.id}}</td>
+    <td>{{item.description}}</td>
+    <td>{{item.comment}}</td>
+    <!--<td>{{item.drop!!.place}}</td>
+    <td>{{item.drop!!.extraInfo}}</td>-->
+  </tr>
+  </tbody>
+</table>
+
+<clr-wizard #wizardmd [(clrWizardOpen)]="mdOpen" clrWizardSize="lg">
+  <clr-wizard-title>Medium-Sized Wizard</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Page 1</ng-template>
+    ...
+  </clr-wizard-page>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Page 2</ng-template>
+    ...
+  </clr-wizard-page>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Page 3</ng-template>
+    ...
+  </clr-wizard-page>
+</clr-wizard>
+
